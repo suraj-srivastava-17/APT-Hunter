@@ -1,0 +1,14 @@
+[
+  {"host": "PC-DRDO-01", "event_type": "network", "timestamp": "2026-06-18T10:01:00",
+   "connection": {"dest_ip": "185.220.101.45", "domain": "windows-update.net", "bytes_sent": 200}},
+  {"host": "PC-DRDO-01", "event_type": "process", "timestamp": "2026-06-18T10:02:00",
+   "process": {"name": "crimsonrat.exe", "parent": "explorer.exe"}},
+  {"host": "PC-DRDO-01", "event_type": "behavior", "timestamp": "2026-06-18T10:05:00",
+   "behavior": {"action": "data_exfiltration", "size": "12MB", "dest_ip": "185.220.101.45"}},
+  {"host": "PC-MHA-USER", "event_type": "network", "timestamp": "2026-06-18T11:00:00",
+   "connection": {"dest_ip": "8.8.8.8", "domain": "google.com", "bytes_sent": 5000}},
+  {"host": "PC-MHA-USER", "event_type": "network", "timestamp": "2026-06-18T11:10:00",
+   "connection": {"dest_ip": "203.0.113.50", "domain": "randomsite.com", "bytes_sent": 9500000}},
+  {"host": "PC-MOD-CLEAN", "event_type": "network", "timestamp": "2026-06-18T12:00:00",
+   "connection": {"dest_ip": "8.8.8.8", "domain": "google.com", "bytes_sent": 1000}}
+]

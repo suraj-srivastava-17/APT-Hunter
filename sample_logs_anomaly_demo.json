@@ -1,0 +1,8 @@
+[
+  {"host": "PC-MHA-USER", "event_type": "network", "timestamp": "2026-06-18T08:00:00",
+   "connection": {"dest_ip": "8.8.8.8", "domain": "google.com", "bytes_sent": 2000}},
+  {"host": "PC-MHA-USER", "event_type": "network", "timestamp": "2026-06-18T08:05:00",
+   "connection": {"dest_ip": "172.217.0.0", "domain": "youtube.com", "bytes_sent": 1500000}},
+  {"host": "PC-MHA-USER", "event_type": "network", "timestamp": "2026-06-18T08:30:00",
+   "connection": {"dest_ip": "203.0.113.77", "domain": "filehost-unknown.com", "bytes_sent": 8200000}}
+]

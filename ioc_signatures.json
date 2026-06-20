@@ -1,0 +1,58 @@
+{
+  "_comment": "Sample IOC signatures used for the demo. These are illustrative, not live threat intel — swapping this file out is how you'd point the tool at a different IOC feed without touching code.",
+  "APT36": {
+    "description": "Sample group #1 used for this demo - RAT-style malware, fake update domains",
+    "ips": [
+      "185.220.101.45",
+      "45.142.212.100",
+      "194.165.16.11",
+      "79.137.207.92",
+      "192.241.220.61"
+    ],
+    "domains": [
+      "windows-update.net",
+      "microsoftupdate.in",
+      "mail-secure.xyz",
+      "defence-portal.net",
+      "mod-india.co"
+    ],
+    "malware_files": [
+      "crimson.exe",
+      "oblique.dll",
+      "winupdate32.bat",
+      "svchost32.exe",
+      "crimsonrat.exe"
+    ],
+    "processes": [
+      "crimsonrat",
+      "obliquerat",
+      "crimsonupdate",
+      "winupd32"
+    ]
+  },
+  "SideCopy": {
+    "description": "Sample group #2 used for this demo - mimics another group's tooling style",
+    "ips": [
+      "103.255.6.10",
+      "103.193.52.211",
+      "45.61.136.100",
+      "198.23.249.100"
+    ],
+    "domains": [
+      "army-update.in",
+      "mod-india.net",
+      "indianarmy.co",
+      "drdo-update.org"
+    ],
+    "malware_files": [
+      "sideloaded.dll",
+      "action_rat.exe",
+      "winword_update.exe"
+    ],
+    "processes": [
+      "sidewinder",
+      "sideupdate",
+      "action_rat"
+    ]
+  }
+}

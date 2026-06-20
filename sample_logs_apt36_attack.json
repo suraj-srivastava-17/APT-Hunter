@@ -1,0 +1,18 @@
+[
+  {"host": "PC-DRDO-01", "event_type": "network", "timestamp": "2026-06-18T09:00:00",
+   "connection": {"dest_ip": "8.8.8.8", "domain": "google.com", "bytes_sent": 500}},
+  {"host": "PC-DRDO-01", "event_type": "network", "timestamp": "2026-06-18T09:05:00",
+   "connection": {"dest_ip": "0.0.0.0", "domain": "microsoftupdate.in", "bytes_sent": 100}},
+  {"host": "PC-DRDO-01", "event_type": "process", "timestamp": "2026-06-18T09:10:00",
+   "process": {"name": "winword.exe", "parent": "explorer.exe"}},
+  {"host": "PC-DRDO-01", "event_type": "process", "timestamp": "2026-06-18T09:11:00",
+   "process": {"name": "powershell.exe", "parent": "winword.exe"}},
+  {"host": "PC-DRDO-01", "event_type": "file", "timestamp": "2026-06-18T09:12:00",
+   "file": {"name": "crimsonrat.exe", "path": "C:\\Users\\user\\AppData\\Local\\Temp\\crimsonrat.exe"}},
+  {"host": "PC-DRDO-01", "event_type": "behavior", "timestamp": "2026-06-18T09:15:00",
+   "behavior": {"action": "registry_persistence", "key": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Update"}},
+  {"host": "PC-DRDO-01", "event_type": "network", "timestamp": "2026-06-18T09:20:00",
+   "connection": {"dest_ip": "185.220.101.45", "domain": "windows-update.net", "bytes_sent": 300}},
+  {"host": "PC-DRDO-01", "event_type": "behavior", "timestamp": "2026-06-18T09:30:00",
+   "behavior": {"action": "data_exfiltration", "size": "25MB", "dest_ip": "185.220.101.45"}}
+]

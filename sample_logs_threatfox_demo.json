@@ -1,0 +1,8 @@
+[
+  {"host": "PC-FINANCE-03", "event_type": "network", "timestamp": "2026-06-19T14:00:00",
+   "connection": {"dest_ip": "8.8.8.8", "domain": "google.com", "bytes_sent": 500}},
+  {"host": "PC-FINANCE-03", "event_type": "network", "timestamp": "2026-06-19T14:05:00",
+   "connection": {"dest_ip": "139.180.203.104", "domain": "", "bytes_sent": 1200}},
+  {"host": "PC-FINANCE-03", "event_type": "network", "timestamp": "2026-06-19T14:10:00",
+   "connection": {"dest_ip": "0.0.0.0", "domain": "jquery.su", "bytes_sent": 800}}
+]
