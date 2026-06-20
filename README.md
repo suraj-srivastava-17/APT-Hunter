@@ -5,7 +5,6 @@ known malware processes/files, macro-spawned shells, registry persistence,
 unusual data exfiltration) in JSON-formatted endpoint/network logs, and maps
 what it finds to MITRE ATT&CK techniques and a kill-chain phase.
 
-Built for the IITK B.Cyber admission hackathon.
 
 # What's real here
 
