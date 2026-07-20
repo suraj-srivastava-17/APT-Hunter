@@ -1,8 +1,8 @@
-APT Hunter India
+#APT Hunter India
 
 A log-analysis tool that flags APT-style intrusion patterns (C2 beacons, known malware processes/files, macro-spawned shells, registry persistence, unusual data exfiltration) in JSON-formatted endpoint/network logs, and maps what it finds to MITRE ATT&CK techniques and a kill-chain phase.
 
-What's real here
+#What's real here
 ThreatFox integration (threatfox_client.py): this tool can check logs against ThreatFox, abuse.ch's real, free, community-maintained feed of currently active malware/botnet IOCs — not invented data. Live if you supply a free Auth-Key, otherwise it falls back to a small offline snapshot built from abuse.ch's own published API documentation examples (real historical IOCs, clearly labeled as a snapshot, not live).
 Local signature file (ioc_signatures.json): a small curated set of named, illustrative sample IOCs (kept clearly labeled as a sample, not live threat intel) — useful for demoing attribution to a named group.
 Sample log files: synthetic, since real APT intrusion logs obviously aren't public — these exist purely to demonstrate the detector working end to end.
@@ -51,10 +51,10 @@ Demo 4 — real ThreatFox IOC match
 Shows a host connecting to indicators that are genuinely tracked by ThreatFox (a Cobalt Strike C2 IP and a Magecart skimming domain, both pulled from abuse.ch's own documentation examples). Run with no key to use the offline snapshot, or with --auth-key for a live lookup:
 
 bash
-# offline snapshot (default, no setup needed)
+# Offline snapshot (default, no setup needed)
 python apt_hunter_india.py sample_logs_threatfox_demo.json
 
-# live lookup against current ThreatFox data
+# Live lookup against current ThreatFox data
 python apt_hunter_india.py sample_logs_threatfox_demo.json --auth-key YOUR_KEY
 
 The report's THREATFOX line tells you whether a run used live data or the offline snapshot, so it's always clear which one produced a given result.
