@@ -155,6 +155,22 @@ KILL_CHAIN_ORDER = [
 
 SEVERITY_ORDER = {'CRITICAL': 0, 'HIGH': 1, 'MEDIUM': 2, 'LOW': 3}
 
+
+def domain_matches(observed, signature):
+    """True if `observed` IS the signature domain or a genuine subdomain
+    of it (exact match or suffix match on a dot boundary).
+
+    Plain substring matching (`sig in observed`) is a real bug: it would
+    also flag "notevil.com.attacker.net" or "myevil.com.au" as a hit for
+    signature "evil.com" just because the characters appear somewhere in
+    the string. Anchoring on '.' + signature avoids that false-positive
+    class while still catching subdomains like "cdn.evil.com"."""
+    observed = (observed or '').lower().rstrip('.')
+    signature = (signature or '').lower().rstrip('.')
+    if not observed or not signature:
+        return False
+    return observed == signature or observed.endswith('.' + signature)
+
 # Categories that are generic detections rather than a named APT family —
 # excluded from "APT families found" so that list doesn't get noisy.
 GENERIC_GROUPS = {'BEHAVIOR', 'SUSPICIOUS', 'ANOMALY'}
@@ -329,7 +345,7 @@ class APTHunter:
                 )
 
             for d in sigs.get('domains', []):
-                if d in domain:
+                if domain_matches(domain, d):
                     self._alert(
                         'HIGH', apt,
                         f"DNS query to {apt} domain: {domain}",
@@ -351,9 +367,16 @@ class APTHunter:
                 entry['timestamp'], 'Network C2',
                 'c2_communication', score=30, host=host
             )
-        if domain and domain in self.threatfox_iocs.get('domains', set()):
+        # Exact-or-subdomain match against ThreatFox domains too (same
+        # domain_matches helper as above, so a lookalike like
+        # "notevil-c2.com.attacker.net" can't accidentally match).
+        tf_domain_hit = next(
+            (d for d in self.threatfox_iocs.get('domains', set()) if domain_matches(domain, d)),
+            None
+        )
+        if tf_domain_hit:
             is_known_apt_ip = True
-            meta = self.threatfox_iocs['metadata'].get(domain, {})
+            meta = self.threatfox_iocs['metadata'].get(tf_domain_hit, {})
             malware = meta.get('malware', 'Unknown')
             self._alert(
                 'CRITICAL', 'ThreatFox',
