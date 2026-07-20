@@ -109,6 +109,3 @@ This is a working pipeline, not a finished research product, and the gap between
 
 
 
-## License
-
-Not yet added.
