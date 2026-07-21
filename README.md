@@ -7,9 +7,9 @@ Feed it a JSON log of endpoint/network activity. It flags C2 beacons, known-malw
 
 No dependencies. No API key required to run it. Four working demos included.
 
-## Why three detection methods instead of one
+## Why three detection methods instead of one?
 
-Most student projects in this space pick one technique and stop. This one runs three in parallel, because real detection pipelines don't rely on a single signal:
+Most projects in this space pick one technique and stop. This one runs three in parallel, because real detection pipelines don't rely on a single signal:
 
 | Method | What it catches | Backed by |
 |---|---|---|
