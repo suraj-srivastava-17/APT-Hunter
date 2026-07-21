@@ -1,5 +1,5 @@
 """
-APT Hunter India
+APT Hunter
 =================
 A log-analysis tool that flags APT-style intrusion patterns (C2 beacons,
 known malware processes/files, macro-spawned shells, registry persistence,
