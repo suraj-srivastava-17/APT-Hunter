@@ -6,33 +6,8 @@ known malware processes/files, macro-spawned shells, registry persistence,
 unusual data exfiltration) in JSON-formatted endpoint/network logs, and maps
 what it finds to MITRE ATT&CK techniques and a kill-chain phase.
 
-Built for the IITK B.Cyber admission hackathon.
 
-WHY THIS EXISTS
-----------------
-Most "is my machine compromised" demos either (a) hardcode a tiny IOC list
-and call it a day, or (b) try to look like a finished commercial product
-and end up shallow. This project picks a narrower, more honest scope:
-  - one realistic detection pipeline (network / process / file / behavior)
-  - explicit mapping to MITRE ATT&CK + kill-chain phases, so the output is
-    explainable, not just "alert fired"
-  - one genuinely useful extra: anomaly detection for IOCs we DON'T have,
-    using a simple "new destination + abnormally large upload" heuristic
-  - support for multi-host logs, since a real SOC never looks at one PC
-    in isolation
 
-WHAT'S NOT REAL HERE
-----------------------
-The IOC list in ioc_signatures.json is a small, made-up sample built from
-public reporting on how APT36/SideCopy-style campaigns typically behave
-(fake "Windows update" domains, RAT process names, etc.) — it is NOT a live
-threat-intel feed and shouldn't be treated as one. The point of the project
-is the detection pipeline and reporting logic, not the specific IOCs, which
-is also why they live in a separate JSON file instead of being baked into
-the code — swap that file for a real feed and the rest of the pipeline
-still works.
-
-USAGE
 ------
     python apt_hunter_india.py <log_file.json> [options]
 
